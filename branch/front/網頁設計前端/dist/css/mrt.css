@@ -1,0 +1,49 @@
+*{
+    
+    font-family: 'cwTeXYen', serif;
+}
+@font-face {
+
+/*圓體*/
+
+  font-family: 'cwTeXYen';
+  font-style: normal;
+  font-weight: 500;
+  src: url(http://fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot);
+  src: url(http://fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(http://fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff2) format('woff2'),
+       url(http://fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.woff) format('woff'),
+       url(http://fonts.gstatic.com/ea/cwtexyen/v3/cwTeXYen-zhonly.ttf) format('truetype');
+}
+
+body{
+ 	background-image:url("../imgs/dice.jpg");
+ }
+h1 {
+	background-color:green;
+	color:white;
+	padding:15px;
+	margin-top:0px;
+}
+.div1 {
+	margin:0 auto;
+	border:3px solid green;
+	width:1024px;
+	min-height:1024px;
+}
+.div2 {
+	margin:50px;
+	border-style:hidden;
+	min-height:900px;
+}
+.div3 {
+	margin:30px 30px 30px 350px;
+	border:0.5px solid gray;
+	border-radius:10px;
+	width:570px;
+	min-height:900px;
+}
+.divimg1 {
+	float: left;
+	height:500px;
+}
