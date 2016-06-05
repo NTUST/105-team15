@@ -15,13 +15,19 @@
         <!-- js ref.-->
         <script src="../dist/js/jquery.min.js"></script>
         <script src="../dist/js/bootstrap.min.js"></script>
-
+        <!-- tab script-->
+        <script type="text/javascript">
+            $('#myTabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
 
     </head>
 
     <body role="content" >
         <!--top menu-->
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse topmenu">
             <div class="container">
                 <!--navbar-header-->
                 <div class="navbar-header">
@@ -47,7 +53,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href=#>文湖線</a>/</li>
+                                <li><a href=#>文湖線</a></li>
                                 <li><a href=#>淡水信義線</a></li>
                                 <li><a href=#>松山新店線</a></li>
                                 <li><a href=#>中和新蘆線</a></li>
@@ -58,25 +64,29 @@
                 </div>
             </div>
         </nav>
-
+        <!-- content -->
      	<div class="center">
-    　		<div class="div1">
-    			<h1>捷運公館站</h1>
-    			<div class="div2">
-    				<div class="divimg1">
-    					<img src="../imgs/公館站.jpg">
-    					<p></p>
-    					<img margin-top="0px" src="../imgs/捷運.png">
-    				</div>
-    				<div class="div3">
-                    <table style="margin:30px 0px 0px 30px">
-                        <tr><td><h2 style="font-family: 'cwTeXYen';">．美食</h2></td></tr>
-                        <tr><td></td></tr>
-                        <tr><td><h2>．景點</h2></td></tr>
-                        <tr><td></td></tr>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+    　		<div class="border_content">
+                <!--station name-->
+    			<h2 class="mrt_station">捷運公館站</h2>
+
+                <!-- tabs -->
+                <div class="tab">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#view" aria-controls="view" role="tab" data-toggle="tab">景點</a></li>
+                        <li role="presentation"><a href="#food" aria-controls="food" role="tab" data-toggle="tab">美食</a></li>
+                        <li role="presentation"><a href="#culture" aria-controls="culture" role="tab" data-toggle="tab">在地文化</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content tabpanel">
+                        <div role="tabpanel" class="tab-pane fade in active" id="view">景點</div>
+                        <div role="tabpanel" class="tab-pane fade" id="food">美食</div>
+                        <div role="tabpanel" class="tab-pane fade" id="culture">在地文化</div>
+                    </div>
+                </div>
+    	    </div>
+        </div>
     </body>
 </html>

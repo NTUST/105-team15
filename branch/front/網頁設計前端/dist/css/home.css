@@ -1,6 +1,6 @@
 *{
 
-    font-family: 'cwTeXYen', serif;
+    font-family: 'cwTeXYen', Arial;
 }
 @font-face {
 
@@ -17,4 +17,7 @@
 }
 body{
     background-image:url("../imgs/dice.jpg");
+}
+.topmenu{
+    font-size: 18px;
 }

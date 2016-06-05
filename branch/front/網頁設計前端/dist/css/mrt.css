@@ -1,6 +1,6 @@
 *{
-    
-    font-family: 'cwTeXYen', serif;
+
+    font-family: 'cwTeXYen', Arial;
 }
 @font-face {
 
@@ -19,29 +19,46 @@
 body{
  	background-image:url("../imgs/dice.jpg");
  }
-h1 {
+
+.topmenu{
+    font-size: 18px;
+}
+
+h2.mrt_station {
 	background-color:green;
 	color:white;
 	padding:15px;
 	margin-top:0px;
 }
-.div1 {
-	margin:0 auto;
+
+.border_content {
+	margin:0px auto;
 	border:3px solid green;
+    border-radius:10px;
 	width:1024px;
-	min-height:1024px;
+	height:580px;
 }
-.div2 {
-	margin:50px;
-	border-style:hidden;
-	min-height:900px;
+
+div.tab{
+    margin:30px 30px 30px 30px;
+    font-size: 15px;
 }
+
+div.tabpanel{
+    border:solid #ddd;
+    border-width: 0px 0.5px 0.5px 0.5px;
+    height: 400px;
+    padding: 30px 30px 30px 30px;
+    overflow-y:scroll;
+}
+
 .div3 {
 	margin:30px 30px 30px 350px;
 	border:0.5px solid gray;
 	border-radius:10px;
 	width:570px;
-	min-height:900px;
+    height: 500px;
+    float: right;
 }
 .divimg1 {
 	float: left;
