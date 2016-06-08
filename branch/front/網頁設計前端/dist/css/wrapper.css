@@ -19,15 +19,16 @@ html, body {
 #id_content {
     /* 留出header及footer區塊的空間 */
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 110px;
 }
 
 #id_footer {
+    background-color:gray;
+    padding: 10px;
     /* 設定footer的高度 */
-    height: 40px;
+    height: 100px;
     box-sizing: border-box;
     /* 設定footer絕對位置在底部 */
-    position: absolute;
     bottom: 0;
     /* 展開footer寬度 */
     width: 100%;
