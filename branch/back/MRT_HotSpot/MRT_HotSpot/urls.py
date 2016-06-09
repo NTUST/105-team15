@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from MRTapps.views import MRT
 
 urlpatterns = [
+    url(r'^$', include('MRTapps.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^MRT/', include('MRTapps.urls')),
+    url(r'^MRT/', MRT),
+    #url(r'^Super/',Super),
 ]

@@ -2,8 +2,16 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+class MRTLines(models.Model):
+    line_name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.line_name
+
 class MRTStops(models.Model):
+    #路線顏色
     #車站名稱
+    stop_line = models.ManyToManyField(MRTLines)
     stop_name = models.CharField(max_length=10)
 
     def __str__(self):
