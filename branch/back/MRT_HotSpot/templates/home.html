@@ -41,302 +41,150 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="home.html">大台北捷運景點</a>
+                            <a class="navbar-brand" href="home">大台北捷運景點</a>
                         </div>
 
                         <!--navbar content -->
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="home.html">首頁</a></li>
-                                <li><a href="about.html">關於我們</a></li>
+                                <li><a href="{% url 'home' %}">首頁</a></li>
+                                <li><a href="{% url 'about' %}">關於我們</a></li>
                                 <!--dropdown menu-->
+                                {% for d_line in lines %}
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        文湖線<span class="caret"></span>
+                                        {{ d_line.line_name }}<span class="caret"></span>
                                     </a>
-
                                     <ul class="dropdown-menu" role="menu">
-                                        <li class="disabled"><a href="#">動物園</a></li>
-                                        <li class="disabled"><a href="#">木柵</a></li>
-                                        <li class="disabled"><a href="#">萬芳社區</a></li>
-                                        <li class="disabled"><a href="#">萬芳醫院</a></li>
-                                        <li class="disabled"><a href="#">辛亥</a></li>
-                                        <li class="disabled"><a href="#">麟光</a></li>
-                                        <li class="disabled"><a href="#">六張犁</a></li>
-                                        <li class="disabled"><a href="#">科技大樓</a></li>
-                                        <li class="disabled"><a href="#">大安</a></li>
-                                        <li class="disabled"><a href="#">忠孝復興</a></li>
-                                        <li class="disabled"><a href="#">南京復興</a></li>
-                                        <li class="disabled"><a href="#">中山國中</a></li>
-                                        <li class="disabled"><a href="#">松山機場</a></li>
-                                        <li class="disabled"><a href="#">大直</a></li>
-                                        <li class="disabled"><a href="#">劍南路</a></li>
-                                        <li class="disabled"><a href="#">西湖</a></li>
-                                        <li class="disabled"><a href="#">港墘</a></li>
-                                        <li class="disabled"><a href="#">文德</a></li>
-                                        <li class="disabled"><a href="#">內湖</a></li>
-                                        <li class="disabled"><a href="#">大湖公園</a></li>
-                                        <li class="disabled"><a href="#">葫洲</a></li>
-                                        <li class="disabled"><a href="#">東湖</a></li>
-                                        <li class="disabled"><a href="#">南港軟體園區</a></li>
-                                        <li class="disabled"><a href="#">南港展覽館</a></li>
+                                        {% for d_stop in d_line.mrtstops_set.all %}
+                                        <li><a href="{% url 'MRT' stopName=d_stop.stop_name %}">{{ d_stop.stop_name }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        淡水信義線<span class="caret"></span>
-                                    </a>
-
-                                     <ul class="dropdown-menu" role="menu">
-                                        <li class="disabled"><a href="#">淡水</a></li>
-                                        <li class="disabled"><a href="#">紅樹林</a></li>
-                                        <li class="disabled"><a href="#">竹圍</a></li>
-                                        <li class="disabled"><a href="#">關渡</a></li>
-                                        <li class="disabled"><a href="#">忠義</a></li>
-                                        <li class="disabled"><a href="#">復興崗</a></li>
-                                        <li class="disabled"><a href="#">新北投</a></li>
-                                        <li class="disabled"><a href="#">北投</a></li>
-                                        <li class="disabled"><a href="#">奇岩</a></li>
-                                        <li class="disabled"><a href="#">唭哩岸</a></li>
-                                        <li class="disabled"><a href="#">石牌</a></li>
-                                        <li class="disabled"><a href="#">明德</a></li>
-                                        <li class="disabled"><a href="#">芝山</a></li>
-                                        <li class="disabled"><a href="#">士林</a></li>
-                                        <li class="disabled"><a href="#">劍潭</a></li>
-                                        <li class="disabled"><a href="#">圓山</a></li>
-                                        <li class="disabled"><a href="#">民權西路</a></li>
-                                        <li class="disabled"><a href="#">雙連</a></li>
-                                        <li class="disabled"><a href="#">中山</a></li>
-                                        <li class="disabled"><a href="#">台北車站</a></li>
-                                        <li class="disabled"><a href="#">台大醫院</a></li>
-                                        <li class="disabled"><a href="#">中正紀念堂</a></li>
-                                        <li class="disabled"><a href="#">東門</a></li>
-                                        <li class="disabled"><a href="#">大安森林公園</a></li>
-                                        <li class="disabled"><a href="#">大安</a></li>
-                                        <li class="disabled"><a href="#">信義安和</a></li>
-                                        <li class="disabled"><a href="#">台北101/世貿</a></li>
-                                        <li class="disabled"><a href="#">象山</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown">
-                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        松山新店線<span class="caret"></span>
-                                      </a>
-
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li class="disabled"><a href="#">松山</a></li>
-                                        <li class="disabled"><a href="#">南京三民</a></li>
-                                        <li class="disabled"><a href="#">台北小巨蛋</a></li>
-                                        <li class="disabled"><a href="#">南京復興</a></li>
-                                        <li class="disabled"><a href="#">松江南京</a></li>
-                                        <li class="disabled"><a href="#">中山</a></li>
-                                        <li class="disabled"><a href="#">北門</a></li>
-                                        <li class="disabled"><a href="#">西門</a></li>
-                                        <li class="disabled"><a href="#">小南門</a></li>
-                                        <li class="disabled"><a href="#">中正紀念堂</a></li>
-                                        <li class="disabled"><a href="#">古亭</a></li>
-                                        <li class="disabled"><a href="#">台電大樓</a></li>
-                                        <li><a href="MRT/公館">公館</a></li>
-                                        <li class="disabled"><a href="#">萬隆</a></li>
-                                        <li class="disabled"><a href="#">景美</a></li>
-                                        <li class="disabled"><a href="#">大坪林</a></li>
-                                        <li class="disabled"><a href="#">七張</a></li>
-                                        <li class="disabled"><a href="#">小碧潭</a></li>
-                                        <li class="disabled"><a href="#">新店區公所</a></li>
-                                        <li class="disabled"><a href="#">新店</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        中和新蘆線<span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li class="disabled"><a href="#">南勢角</a></li>
-                                        <li class="disabled"><a href="#">景安</a></li>
-                                        <li class="disabled"><a href="#">永安市場</a></li>
-                                        <li class="disabled"><a href="#">頂溪</a></li>
-                                        <li class="disabled"><a href="#">古亭</a></li>
-                                        <li class="disabled"><a href="#">東門</a></li>
-                                        <li class="disabled"><a href="#">忠孝新生</a></li>
-                                        <li class="disabled"><a href="#">松江南京</a></li>
-                                        <li class="disabled"><a href="#">行天宮</a></li>
-                                        <li class="disabled"><a href="#">中山國小</a></li>
-                                        <li class="disabled"><a href="#">民權西路</a></li>
-                                        <li class="disabled"><a href="#">大橋頭</a></li>
-                                        <li class="disabled"><a href="#">台北橋</a></li>
-                                        <li class="disabled"><a href="#">菜寮</a></li>
-                                        <li class="disabled"><a href="#">三重</a></li>
-                                        <li class="disabled"><a href="#">先嗇宮</a></li>
-                                        <li class="disabled"><a href="#">頭前庄</a></li>
-                                        <li class="disabled"><a href="#">新莊</a></li>
-                                        <li class="disabled"><a href="#">輔大</a></li>
-                                        <li class="disabled"><a href="#">丹鳳</a></li>
-                                        <li class="disabled"><a href="#">迴龍</a></li>
-                                        <li class="disabled"><a href="#">三重國小</a></li>
-                                        <li class="disabled"><a href="#">三和國中</a></li>
-                                        <li class="disabled"><a href="#">徐匯中學</a></li>
-                                        <li class="disabled"><a href="#">三民高中</a></li>
-                                        <li class="disabled"><a href="#">蘆洲</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                        板南線<span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li class="disabled"><a href="#">頂埔</a></li>
-                                        <li class="disabled"><a href="#">永寧</a></li>
-                                        <li class="disabled"><a href="#">土城</a></li>
-                                        <li class="disabled"><a href="#">海山</a></li>
-                                        <li class="disabled"><a href="#">亞東醫院</a></li>
-                                        <li class="disabled"><a href="#">府中</a></li>
-                                        <li class="disabled"><a href="#">板橋</a></li>
-                                        <li class="disabled"><a href="#">新埔</a></li>
-                                        <li class="disabled"><a href="#">江子翠</a></li>
-                                        <li class="disabled"><a href="#">龍山寺</a></li>
-                                        <li class="disabled"><a href="#">西門</a></li>
-                                        <li class="disabled"><a href="#">台北車站</a></li>
-                                        <li class="disabled"><a href="#">善導寺</a></li>
-                                        <li class="disabled"><a href="#">忠孝新生</a></li>
-                                        <li class="disabled"><a href="#">忠孝復興</a></li>
-                                        <li class="disabled"><a href="#">忠孝敦化</a></li>
-                                        <li class="disabled"><a href="#">國父紀念館</a></li>
-                                        <li class="disabled"><a href="#">市政府</a></li>
-                                        <li class="disabled"><a href="#">永春</a></li>
-                                        <li class="disabled"><a href="#">後山埤</a></li>
-                                        <li class="disabled"><a href="#">昆陽</a></li>
-                                        <li class="disabled"><a href="#">南港</a></li>
-                                        <li class="disabled"><a href="#">南港展覽館</a></li>
-                                    </ul>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
                 </nav>
             </div><!-- /id_header -->
-
             <div id="id_content">
                 <div style="text-align:center;">
                     <map name="FPMap1">
+
+                        <area href="{% url 'MRT' stopName='淡水' %}" shape="rect" coords="37,50,69,83" alt="淡水">
+                        <area href="{% url 'MRT' stopName='關渡' %}" shape="rect" coords="84,127,120,160" alt="關渡">
+                        <area href="{% url 'MRT' stopName='忠義' %}" shape="rect" coords="120,139,145,175" alt="忠義">
+                        <area href="{% url 'MRT' stopName='新北投' %}" shape="rect" coords="213,105,258,153" alt="新北投">
+                        <area href="{% url 'MRT' stopName='北投' %}" shape="rect" coords="184,138,208,178" alt="北投">
+                        <area href="{% url 'MRT' stopName='圓山' %}" shape="rect" coords="271,359,320,385" alt="圓山">
+                        <area href="{% url 'MRT' stopName='劍潭' %}" shape="rect" coords="270,329,309,357" alt="劍潭">
+                        <area href="{% url 'MRT' stopName='士林' %}" shape="rect" coords="270,299,309,325" alt="士林">
+                        <area href="{% url 'MRT' stopName='芝山' %}" shape="rect" coords="272,268,313,292" alt="芝山">
+                        <area href="{% url 'MRT' stopName='明德' %}" shape="rect" coords="273,238,318,260" alt="明德">
+                        <area href="{% url 'MRT' stopName='石牌' %}" shape="rect" coords="257,211,287,239" alt="石牌">
+                        <area href="{% url 'MRT' stopName='唭哩岸' %}" shape="poly" coords="262,180,276,196,237,227,228,212" alt="唭哩岸">
+                        <area href="{% url 'MRT' stopName='奇岩' %}" shape="rect" coords="213,170,245,195" alt="奇岩">
+                        <area href="{% url 'MRT' stopName='民權西路' %}" shape="rect" coords="271,384,321,431" alt="民權西路">
+                        <area href="{% url 'MRT' stopName='雙連' %}" shape="rect" coords="267,433,319,464" alt="雙連">
+                        <area href="{% url 'MRT' stopName='中山' %}" shape="rect" coords="269,463,320,502" alt="中山">
+                        <area href="{% url 'MRT' stopName='新埔' %}" shape="rect" coords="118,633,156,658" alt="新埔">
+                        <area href="{% url 'MRT' stopName='江子翠' %}" shape="rect" coords="136,604,182,631" alt="江子翠">
+                        <area href="{% url 'MRT' stopName='龍山寺' %}" shape="rect" coords="150,578,208,602" alt="龍山寺">
+                        <area href="{% url 'MRT' stopName='西門' %}" shape="rect" coords="198,544,239,578" alt="西門">
+                        <area href="{% url 'MRT' stopName='善導寺' %}" shape="poly" coords="304,545,340,507,339,548,314,567" alt="善導寺">
+                        <area href="{% url 'MRT' stopName='忠孝新生' %}" shape="rect" coords="339,511,401,568" alt="忠孝新生">
+                        <area href="{% url 'MRT' stopName='忠孝敦化' %}" shape="rect" coords="441,529,467,571" alt="忠孝敦化">
+                        <area href="{% url 'MRT' stopName='國父紀念館' %}" shape="rect" coords="471,529,504,568" alt="國父紀念館">
+                        <area href="{% url 'MRT' stopName='市政府' %}" shape="rect" coords="503,526,533,564" alt="市政府">
+                        <area href="{% url 'MRT' stopName='後山埤' %}" shape="rect" coords="556,517,581,563" alt="後山埤">
+                        <area href="{% url 'MRT' stopName='永春' %}" shape="rect" coords="532,529,557,565" alt="永春">
+                        <area href="{% url 'MRT' stopName='昆陽' %}" shape="rect" coords="583,526,612,563" alt="昆陽">
+                        <area href="{% url 'MRT' stopName='南港' %}" shape="rect" coords="612,523,641,561" alt="南港">
+                        <area href="{% url 'MRT' stopName='動物園' %}" shape="rect" coords="594,706,627,757" alt="動物園">
+                        <area href="{% url 'MRT' stopName='木柵' %}" shape="rect" coords="562,716,589,754" alt="木柵">
+                        <area href="{% url 'MRT' stopName='萬芳社區' %}" shape="rect" coords="527,715,559,753" alt="萬芳社區">
+                        <area href="{% url 'MRT' stopName='萬芳醫院' %}" shape="rect" coords="479,714,526,743" alt="萬芳醫院">
+                        <area href="{% url 'MRT' stopName='麟光' %}" shape="rect" coords="477,651,511,687" alt="麟光">
+                        <area href="{% url 'MRT' stopName='辛亥' %}" shape="rect" coords="476,686,512,711" alt="辛亥">
+                        <area href="{% url 'MRT' stopName='六張犁' %}" shape="rect" coords="444,641,478,682" alt="六張犁">
+                        <area href="{% url 'MRT' stopName='科技大樓' %}" shape="rect" coords="402,631,445,670" alt="科技大樓">
+                        <area href="{% url 'MRT' stopName='大安' %}" shape="rect" coords="399,590,434,631" alt="大安">
+                        <area href="{% url 'MRT' stopName='南京復興' %}" shape="rect" coords="398,454,454,502" alt="南京復興">
+                        <area href="{% url 'MRT' stopName='中山國中' %}" shape="rect" coords="403,414,459,455" alt="中山國中">
+                        <area href="{% url 'MRT' stopName='忠孝復興' %}" shape="rect" coords="401,517,442,567" alt="忠孝復興">
+                        <area href="{% url 'MRT' stopName='新店' %}" shape="rect" coords="373,878,420,903" alt="新店">
+                        <area href="{% url 'MRT' stopName='南勢角' %}" shape="rect" coords="183,762,238,787" alt="南勢角">
+                        <area href="{% url 'MRT' stopName='景安' %}" shape="rect" coords="193,726,239,753" alt="景安">
+                        <area href="{% url 'MRT' stopName='永安市場' %}" shape="rect" coords="195,693,254,718" alt="永安市場">
+                        <area href="{% url 'MRT' stopName='頂溪' %}" shape="rect" coords="242,667,280,692" alt="頂溪">
+                        <area href="{% url 'MRT' stopName='新店區公所' %}" shape="rect" coords="375,842,450,868" alt="新店區公所">
+                        <area href="{% url 'MRT' stopName='七張' %}" shape="rect" coords="370,810,418,833" alt="七張">
+                        <area href="{% url 'MRT' stopName='大坪林' %}" shape="rect" coords="372,774,423,799" alt="大坪林">
+                        <area href="{% url 'MRT' stopName='景美' %}" shape="rect" coords="370,738,417,767" alt="景美">
+                        <area href="{% url 'MRT' stopName='萬隆' %}" shape="rect" coords="369,705,414,727" alt="萬隆">
+
+                        <area href="{% url 'MRT' stopName='公館' %}" shape="rect" coords="347,680,397,704" alt="公館">
+                        <!--<area href="公館" shape="rect" coords="347,680,397,704" alt="公館">-->
+
+                        <area href="{% url 'MRT' stopName='台電大樓' %}" shape="rect" coords="326,658,390,681" alt="台電大樓">
+                        <area href="{% url 'MRT' stopName='古亭' %}" shape="rect" coords="294,637,348,659" alt="古亭">
+                        <area href="{% url 'MRT' stopName='中正紀念堂' %}" shape="rect" coords="241,609,289,649" alt="中正紀念堂">
+                        <area href="{% url 'MRT' stopName='小南門' %}" shape="rect" coords="191,609,240,637" alt="小南門">
+                        <area href="{% url 'MRT' stopName='台大醫院' %}" shape="rect" coords="273,569,327,594" alt="台大醫院">
+                        <area href="{% url 'MRT' stopName='台北車站' %}" shape="poly" coords="307,510,329,517,277,567,265,555" alt="台北車站">
+                        <area href="{% url 'MRT' stopName='復興崗' %}" shape="rect" coords="152,134,183,173" alt="復興崗">
+                        <area href="{% url 'MRT' stopName='頂埔' %}" shape="rect" coords="39,862,94,893" alt="頂埔">
+                        <area href="{% url 'MRT' stopName='海山' %}" shape="rect" coords="69,765,116,790" alt="海山">
+                        <area href="{% url 'MRT' stopName='永寧' %}" shape="rect" coords="60,829,115,860" alt="永寧">
+                        <area href="{% url 'MRT' stopName='土城' %}" shape="rect" coords="67,800,114,827" alt="土城">
+                        <area href="{% url 'MRT' stopName='板橋' %}" shape="rect" coords="87,659,130,683" alt="板橋">
+                        <area href="{% url 'MRT' stopName='府中' %}" shape="rect" coords="70,694,112,718" alt="府中">
+                        <area href="{% url 'MRT' stopName='亞東醫院' %}" shape="rect" coords="38,730,115,758" alt="亞東醫院">
+                        <area href="{% url 'MRT' stopName='小碧潭' %}" shape="rect" coords="299,806,355,834" alt="小碧潭">
+                        <area href="{% url 'MRT' stopName='松山機場' %}" shape="rect" coords="403,371,456,411" alt="松山機場">
+                        <area href="{% url 'MRT' stopName='大直' %}" shape="rect" coords="404,335,440,368" alt="大直">
+                        <area href="{% url 'MRT' stopName='劍南路' %}" shape="rect" coords="442,295,477,337" alt="劍南路">
+                        <area href="{% url 'MRT' stopName='西湖' %}" shape="rect" coords="480,300,510,339" alt="西湖">
+                        <area href="{% url 'MRT' stopName='港墘' %}" shape="rect" coords="519,301,555,340" alt="港墘">
+                        <area href="{% url 'MRT' stopName='文德' %}" shape="rect" coords="564,299,594,338" alt="文德">
+                        <area href="{% url 'MRT' stopName='內湖' %}" shape="rect" coords="605,326,630,359" alt="內湖">
+                        <area href="{% url 'MRT' stopName='大湖公園' %}" shape="rect" coords="629,341,689,386" alt="大湖公園">
+                        <area href="{% url 'MRT' stopName='葫洲' %}" shape="rect" coords="643,393,684,417" alt="葫洲">
+                        <area href="{% url 'MRT' stopName='東湖' %}" shape="rect" coords="644,427,687,455" alt="東湖">
+                        <area href="{% url 'MRT' stopName='南港軟體園區' %}" shape="rect" coords="646,471,706,514" alt="南港軟體園區">
+                        <area href="{% url 'MRT' stopName='大安森林公園' %}" shape="rect" coords="351,566,400,628" alt="大安森林公園">
+                        <area href="{% url 'MRT' stopName='信義安和' %}" shape="rect" coords="438,577,475,630" alt="信義安和">
+                        <area href="{% url 'MRT' stopName='台北101' %}" shape="rect" coords="478,569,517,632" alt="台北101/世貿">
+                        <area href="{% url 'MRT' stopName='象山' %}" shape="rect" coords="515,587,546,636" alt="象山">
+                        <area href="{% url 'MRT' stopName='南港展覽館' %}" shape="rect" coords="647,516,705,569" alt="南港展覽館">
+                        <area href="{% url 'MRT' stopName='蘆洲' %}" shape="rect" coords="84,279,129,298" alt="蘆洲">
+                        <area href="{% url 'MRT' stopName='紅樹林' %}" shape="poly" coords="90,63,74,76,54,93,63,109,105,75" alt="紅樹林">
+                        <area href="{% url 'MRT' stopName='三民高中' %}" shape="rect" coords="110,302,202,324" alt="三民高中">
+                        <area href="{% url 'MRT' stopName='徐匯中學' %}" shape="rect" coords="130,324,222,342" alt="徐匯中學">
+                        <area href="{% url 'MRT' stopName='三和國中' %}" shape="rect" coords="149,343,239,362" alt="三和國中">
+                        <area href="{% url 'MRT' stopName='三重國小' %}" shape="rect" coords="167,363,262,384" alt="三重國小">
+                        <area href="{% url 'MRT' stopName='大橋頭' %}" shape="rect" coords="214,394,255,431" alt="大橋頭">
+                        <area href="{% url 'MRT' stopName='中山國小' %}" shape="rect" coords="320,373,370,430" alt="中山國小">
+                        <area href="{% url 'MRT' stopName='行天宮' %}" shape="rect" coords="342,429,388,457" alt="行天宮">
+                        <area href="{% url 'MRT' stopName='松江南京' %}" shape="rect" coords="339,457,391,501" alt="松江南京">
+                        <area href="{% url 'MRT' stopName='東門' %}" shape="rect" coords="313,593,350,628" alt="東門">
+                        <area href="{% url 'MRT' stopName='迴龍' %}" shape="rect" coords="10,610,55,635" alt="迴龍">
+                        <area href="{% url 'MRT' stopName='丹鳳' %}" shape="rect" coords="36,591,80,611" alt="丹鳳">
+                        <area href="{% url 'MRT' stopName='輔大' %}" shape="rect" coords="58,568,124,592" alt="輔大">
+                        <area href="{% url 'MRT' stopName='新莊' %}" shape="rect" coords="80,549,128,569" alt="新莊">
+                        <area href="{% url 'MRT' stopName='頭前庄' %}" shape="rect" coords="101,528,163,549" alt="頭前庄">
+                        <area href="{% url 'MRT' stopName='先嗇宮' %}" shape="rect" coords="120,507,176,529" alt="先嗇宮">
+                        <area href="{% url 'MRT' stopName='三重' %}" shape="rect" coords="145,482,191,503" alt="三重">
+                        <area href="{% url 'MRT' stopName='台北橋' %}" shape="rect" coords="185,443,237,465" alt="台北橋">
+                        <area href="{% url 'MRT' stopName='菜寮' %}" shape="rect" coords="166,464,205,483" alt="菜寮">
+                        <area href="{% url 'MRT' stopName='北門' %}" shape="rect" coords="197,516,235,542" alt="北門">
+                        <area href="{% url 'MRT' stopName='松山' %}" shape="rect" coords="544,455,582,502" alt="松山">
+                        <area href="{% url 'MRT' stopName='南京三民' %}" shape="rect" coords="503,450,541,499" alt="南京三民">
+                        <area href="{% url 'MRT' stopName='台北小巨蛋' %}" shape="rect" coords="456,445,500,501" alt="台北小巨蛋">
+                        <area href="{% url 'MRT' stopName='竹圍' %}" shape="poly" coords="105,89,78,115,86,128,116,108" alt="竹圍">
                         <!--
-                        <area href="stationdetail2010.asp?ID=071" shape="rect" coords="37,50,69,83" alt="淡水">
-                        <area href="stationdetail2010.asp?ID=068" shape="rect" coords="84,127,120,160" alt="關渡">
-                        <area href="stationdetail2010.asp?ID=067" shape="rect" coords="120,139,145,175" alt="忠義">
-                        <area href="stationdetail2010.asp?ID=065" shape="rect" coords="213,105,258,153" alt="新北投">
-                        <area href="stationdetail2010.asp?ID=064" shape="rect" coords="184,138,208,178" alt="北投">
-                        <area href="stationdetail2010.asp?ID=056" shape="rect" coords="271,359,320,385" alt="圓山">
-                        <area href="stationdetail2010.asp?ID=057" shape="rect" coords="270,329,309,357" alt="劍潭">
-                        <area href="stationdetail2010.asp?ID=058" shape="rect" coords="270,299,309,325" alt="士林">
-                        <area href="stationdetail2010.asp?ID=059" shape="rect" coords="272,268,313,292" alt="芝山">
-                        <area href="stationdetail2010.asp?ID=060" shape="rect" coords="273,238,318,260" alt="明德">
-                        <area href="stationdetail2010.asp?ID=061" shape="rect" coords="257,211,287,239" alt="石牌">
-                        <area href="stationdetail2010.asp?ID=062" shape="poly" coords="262,180,276,196,237,227,228,212" alt="唭哩岸">
-                        <area href="stationdetail2010.asp?ID=063" shape="rect" coords="213,170,245,195" alt="奇岩">
-                        <area href="stationdetail2010.asp?ID=055" shape="rect" coords="271,384,321,431" alt="民權西路">
-                        <area href="stationdetail2010.asp?ID=054" shape="rect" coords="267,433,319,464" alt="雙連">
-                        <area href="stationdetail2010.asp?ID=053" shape="rect" coords="269,463,320,502" alt="中山">
-                        <area href="stationdetail2010.asp?ID=083" shape="rect" coords="118,633,156,658" alt="新埔">
-                        <area href="stationdetail2010.asp?ID=084" shape="rect" coords="136,604,182,631" alt="江子翠">
-                        <area href="stationdetail2010.asp?ID=085" shape="rect" coords="150,578,208,602" alt="龍山寺">
-                        <area href="stationdetail2010.asp?ID=086" shape="rect" coords="198,544,239,578" alt="西門">
-                        <area href="stationdetail2010.asp?ID=088" shape="poly" coords="304,545,340,507,339,548,314,567" alt="善導寺">
-                        <area href="stationdetail2010.asp?ID=089" shape="rect" coords="339,511,401,568" alt="忠孝新生">
-                        <area href="stationdetail2010.asp?ID=091" shape="rect" coords="441,529,467,571" alt="忠孝敦化">
-                        <area href="stationdetail2010.asp?ID=092" shape="rect" coords="471,529,504,568" alt="國父紀念館">
-                        <area href="stationdetail2010.asp?ID=093" shape="rect" coords="503,526,533,564" alt="市政府">
-                        <area href="stationdetail2010.asp?ID=095" shape="rect" coords="556,517,581,563" alt="後山埤">
-                        <area href="stationdetail2010.asp?ID=094" shape="rect" coords="532,529,557,565" alt="永春">
-                        <area href="stationdetail2010.asp?ID=096" shape="rect" coords="583,526,612,563" alt="昆陽">
-                        <area href="stationdetail2010.asp?ID=097" shape="rect" coords="612,523,641,561" alt="南港">
-                        <area href="stationdetail2010.asp?ID=019" shape="rect" coords="594,706,627,757" alt="動物園">
-                        <area href="stationdetail2010.asp?ID=018" shape="rect" coords="562,716,589,754" alt="木柵">
-                        <area href="stationdetail2010.asp?ID=017" shape="rect" coords="527,715,559,753" alt="萬芳社區">
-                        <area href="stationdetail2010.asp?ID=016" shape="rect" coords="479,714,526,743" alt="萬芳醫院">
-                        <area href="stationdetail2010.asp?ID=014" shape="rect" coords="477,651,511,687" alt="麟光">
-                        <area href="stationdetail2010.asp?ID=015" shape="rect" coords="476,686,512,711" alt="辛亥">
-                        <area href="stationdetail2010.asp?ID=013" shape="rect" coords="444,641,478,682" alt="六張犁">
-                        <area href="stationdetail2010.asp?ID=012" shape="rect" coords="402,631,445,670" alt="科技大樓">
-                        <area href="stationdetail2010.asp?ID=011" shape="rect" coords="399,590,434,631" alt="大安">
-                        <area href="stationdetail2010.asp?ID=009" shape="rect" coords="398,454,454,502" alt="南京復興">
-                        <area href="stationdetail2010.asp?ID=008" shape="rect" coords="403,414,459,455" alt="中山國中">
-                        <area href="stationdetail2010.asp?ID=010" shape="rect" coords="401,517,442,567" alt="忠孝復興">
-                        <area href="stationdetail2010.asp?ID=033" shape="rect" coords="373,878,420,903" alt="新店">
-                        <area href="stationdetail2010.asp?ID=048" shape="rect" coords="183,762,238,787" alt="南勢角">
-                        <area href="stationdetail2010.asp?ID=047" shape="rect" coords="193,726,239,753" alt="景安">
-                        <area href="stationdetail2010.asp?ID=046" shape="rect" coords="195,693,254,718" alt="永安市場">
-                        <area href="stationdetail2010.asp?ID=045" shape="rect" coords="242,667,280,692" alt="頂溪">
-                        <area href="stationdetail2010.asp?ID=034" shape="rect" coords="375,842,450,868" alt="新店區公所">
-                        <area href="stationdetail2010.asp?ID=035" shape="rect" coords="370,810,418,833" alt="七張">
-                        <area href="stationdetail2010.asp?ID=036" shape="rect" coords="372,774,423,799" alt="大坪林">
-                        <area href="stationdetail2010.asp?ID=037" shape="rect" coords="370,738,417,767" alt="景美">
-                        <area href="stationdetail2010.asp?ID=038" shape="rect" coords="369,705,414,727" alt="萬隆">
-                        -->
-                        <area href="MRT.html" shape="rect" coords="347,680,397,704" alt="公館">
-                        <!--
-                        <area href="stationdetail2010.asp?ID=040" shape="rect" coords="326,658,390,681" alt="台電大樓">
-                        <area href="stationdetail2010.asp?ID=041" shape="rect" coords="294,637,348,659" alt="古亭">
-                        <area href="stationdetail2010.asp?ID=042" shape="rect" coords="241,609,289,649" alt="中正紀念堂">
-                        <area href="stationdetail2010.asp?ID=043" shape="rect" coords="191,609,240,637" alt="小南門">
-                        <area href="stationdetail2010.asp?ID=050" shape="rect" coords="273,569,327,594" alt="台大醫院">
-                        <area href="stationdetail2010.asp?ID=051" shape="poly" coords="307,510,329,517,277,567,265,555" alt="台北車站">
-                        <area href="stationdetail2010.asp?ID=066" shape="rect" coords="152,134,183,173" alt="復興崗">
-                        <area href="stationdetail2010.asp?ID=076" shape="rect" coords="39,862,94,893" alt="頂埔">
-                        <area href="stationdetail2010.asp?ID=079" shape="rect" coords="69,765,116,790" alt="海山">
-                        <area href="stationdetail2010.asp?ID=077" shape="rect" coords="60,829,115,860" alt="永寧">
-                        <area href="stationdetail2010.asp?ID=078" shape="rect" coords="67,800,114,827" alt="土城">
-                        <area href="stationdetail2010.asp?ID=082" shape="rect" coords="87,659,130,683" alt="板橋">
-                        <area href="stationdetail2010.asp?ID=081" shape="rect" coords="70,694,112,718" alt="府中">
-                        <area href="stationdetail2010.asp?ID=080" shape="rect" coords="38,730,115,758" alt="亞東醫院">
-                        <area href="stationdetail2010.asp?ID=032" shape="rect" coords="299,806,355,834" alt="小碧潭">
-                        <area href="stationdetail2010.asp?ID=007" shape="rect" coords="403,371,456,411" alt="松山機場">
-                        <area href="stationdetail2010.asp?ID=021" shape="rect" coords="404,335,440,368" alt="大直">
-                        <area href="stationdetail2010.asp?ID=022" shape="rect" coords="442,295,477,337" alt="劍南路">
-                        <area href="stationdetail2010.asp?ID=023" shape="rect" coords="480,300,510,339" alt="西湖">
-                        <area href="stationdetail2010.asp?ID=024" shape="rect" coords="519,301,555,340" alt="港墘">
-                        <area href="stationdetail2010.asp?ID=025" shape="rect" coords="564,299,594,338" alt="文德">
-                        <area href="stationdetail2010.asp?ID=026" shape="rect" coords="605,326,630,359" alt="內湖">
-                        <area href="stationdetail2010.asp?ID=027" shape="rect" coords="629,341,689,386" alt="大湖公園">
-                        <area href="stationdetail2010.asp?ID=028" shape="rect" coords="643,393,684,417" alt="葫洲">
-                        <area href="stationdetail2010.asp?ID=029" shape="rect" coords="644,427,687,455" alt="東湖">
-                        <area href="stationdetail2010.asp?ID=030" shape="rect" coords="646,471,706,514" alt="南港軟體園區">
-                        <area href="stationdetail2010.asp?ID=103" shape="rect" coords="351,566,400,628" alt="大安森林公園">
-                        <area href="stationdetail2010.asp?ID=101" shape="rect" coords="438,577,475,630" alt="信義安和">
-                        <area href="stationdetail2010.asp?ID=100" shape="rect" coords="478,569,517,632" alt="台北101/世貿">
-                        <area href="stationdetail2010.asp?ID=099" shape="rect" coords="515,587,546,636" alt="象山">
-                        <area href="stationdetail2010.asp?ID=031" shape="rect" coords="647,516,705,569" alt="南港展覽館">
-                        <area href="stationdetail2010.asp?ID=174" shape="rect" coords="84,279,129,298" alt="蘆洲">
-                        <area href="stationdetail2010.asp?ID=070" shape="poly" coords="90,63,74,76,54,93,63,109,105,75" alt="紅樹林">
-                        <area href="stationdetail2010.asp?ID=175" shape="rect" coords="110,302,202,324" alt="三民高中">
-                        <area href="stationdetail2010.asp?ID=176" shape="rect" coords="130,324,222,342" alt="徐匯中學">
-                        <area href="stationdetail2010.asp?ID=177" shape="rect" coords="149,343,239,362" alt="三和國中">
-                        <area href="stationdetail2010.asp?ID=178" shape="rect" coords="167,363,262,384" alt="三重國小">
-                        <area href="stationdetail2010.asp?ID=128" shape="rect" coords="214,394,255,431" alt="大橋頭">
-                        <area href="stationdetail2010.asp?ID=130" shape="rect" coords="320,373,370,430" alt="中山國小">
-                        <area href="stationdetail2010.asp?ID=131" shape="rect" coords="342,429,388,457" alt="行天宮">
-                        <area href="stationdetail2010.asp?ID=132" shape="rect" coords="339,457,391,501" alt="松江南京">
-                        <area href="stationdetail2010.asp?ID=134" shape="rect" coords="313,593,350,628" alt="東門">
-                        <area href="stationdetail2010.asp?ID=179" shape="rect" coords="10,610,55,635" alt="迴龍">
-                        <area href="stationdetail2010.asp?ID=180" shape="rect" coords="36,591,80,611" alt="丹鳳">
-                        <area href="stationdetail2010.asp?ID=121" shape="rect" coords="58,568,124,592" alt="輔大">
-                        <area href="stationdetail2010.asp?ID=122" shape="rect" coords="80,549,128,569" alt="新莊">
-                        <area href="stationdetail2010.asp?ID=123" shape="rect" coords="101,528,163,549" alt="頭前庄">
-                        <area href="stationdetail2010.asp?ID=124" shape="rect" coords="120,507,176,529" alt="先嗇宮">
-                        <area href="stationdetail2010.asp?ID=125" shape="rect" coords="145,482,191,503" alt="三重">
-                        <area href="stationdetail2010.asp?ID=127" shape="rect" coords="185,443,237,465" alt="台北橋">
-                        <area href="stationdetail2010.asp?ID=126" shape="rect" coords="166,464,205,483" alt="菜寮">
-                        <area href="stationdetail2010.asp?ID=105" shape="rect" coords="197,516,235,542" alt="北門">
-                        <area href="stationdetail2010.asp?ID=111" shape="rect" coords="544,455,582,502" alt="松山">
-                        <area href="stationdetail2010.asp?ID=110" shape="rect" coords="503,450,541,499" alt="南京三民">
-                        <area href="stationdetail2010.asp?ID=109" shape="rect" coords="456,445,500,501" alt="台北小巨蛋">
-                        <area href="stationdetail2010.asp?ID=069" shape="poly" coords="105,89,78,115,86,128,116,108" alt="竹圍">
                         <area href="http://www.gondola.taipei/" shape="rect" coords="554,763,657,888" target="_blank" alt="貓空纜車, 另開新視窗">
-                        -->
+                    -->
                     </map>
 
                     <p>
@@ -349,7 +197,7 @@
             <footer id="id_footer" >
                 <div class="contentner text-center" >
                     <p style="color:white">Hello，天龍國。建議解析度：1240x1080</p>
-                    <p style="color:white">Designed By NTUST(<a href="about.html" style="color:blue">105-team15</a>)</p>
+                    <p style="color:white">Designed By NTUST(<a href="about" style="color:blue">105-team15</a>)</p>
                     <p style="color:white">資料來源: Google，此網站僅供學術使用</p>
                 </div>
             </footer> <!-- /id_footer -->

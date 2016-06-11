@@ -5,25 +5,30 @@ from MRTapps.models import HotSpot, MRTStops, MRTLines
 import os
 # Create your views here.
 def index(request):
-    return render_to_response('home.html', locals())
+    return HttpResponseRedirect('MRT/home')
 
+def home(request):
+    return render_to_response('home.html', {'lines': MRTLines.objects.all()})
 
+def about(request):
+    return render_to_response('about.html', {'lines': MRTLines.objects.all()})
 
-def MRT(request):
+def MRT(request, stopName):
     COLOR = {
-        '文湖線': 'brown',
-        '淡水信義線': 'red',
+        '文湖線': '#802727',
+        '淡水信義線': '#ce0606',
         '松山新店線': 'green',
-        '中和新蘆線': 'yellow',
-        '板南線': 'blue',
+        '中和新蘆線': '#bfbf3d',
+        '板南線': '#3434c5',
     }
 
     #List
     views = []
     foods = []
+    images = []
 
     #Get stopName
-    stopName = request.path.split('/')[-1]
+    #stopName = request.path.split('/')[-1]
 
     #Get stop model
     stop = MRTStops.objects.get(stop_name = stopName)
@@ -31,41 +36,28 @@ def MRT(request):
     #Get stop line
     line = stop.stop_line.all()[0]
 
-
-
     #get HotStop in stop
     all_hot_spot = stop.hotspot_set.all()
     for spot in all_hot_spot :
+        images = spot.spot_img_source.split(',')
+
         if spot.spot_type == '景點':
-            views.append(spot)
+            views.append([spot, images])
         elif spot.spot_type == '美食':
-            foods.append(spot)
+            foods.append([spot, images])
 
 
-    return render_to_response('MRT.html', {'stop': stopName, 'views': views, 'foods': foods, 'color': COLOR[str(line)]})
+    return render_to_response('MRT.html', {'stop': stopName, 'views': views, 'foods': foods, 'color': COLOR[str(line)], 'lines': MRTLines.objects.all()})
 
 
 
 
 def Super(request):
-    path = '../index/'
+    path = '../網站製作/'
 
-    lineNames = []
     stopNames = []
-    success = []
 
-    for i in MRTLines.objects.all():
-        lineNames.append(str(i))
+    for i in MRTStops.objects.all():
+        stopNames.append(str(i))
 
-    for line in lineNames:
-        Line = MRTLines.objects.get(line_name = line)
-        for stop in os.listdir(path + line):
-            sc = MRTStops.objects.filter(stop_name = stop)
-            if sc.count() > 0:
-                Stop = MRTStops.objects.get(stop_name = stop)
-            else:
-                Stop = MRTStops(stop_name = stop)
-                Stop.save()
-            Stop.stop_line.add(Line)
-
-    return HttpResponse(str(MRTStops.objects.all()))
+    return HttpResponse(str(stopNames))
