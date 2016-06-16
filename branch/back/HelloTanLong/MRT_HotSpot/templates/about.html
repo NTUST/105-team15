@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+    <head>
+        <title>Hello，天龍國</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- css ref.-->
+       <!--<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+       <link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+       <link href="../dist/css/mrt.css" rel="stylesheet">
+       <link href="../dist/css/wrapper.css" rel="stylesheet">-->
+
+       <link href="{% static 'dist/css/bootstrap.min.css' %}" rel="stylesheet">
+       <link href="{% static 'dist/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+       <link href="{% static 'dist/css/mrt.css' %}" rel="stylesheet">
+       <link href="{% static 'dist/css/wrapper.css' %}" rel="stylesheet">
+
+        <!-- js ref.-->
+        <!--
+        <script src="../dist/js/jquery.min.js"></script>
+        <script src="../dist/js/bootstrap.min.js"></script>-->
+        <script src="{% static 'dist/js/jquery.min.js' %}"></script>
+        <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+    </head>
+
+    <body role="content">
+    	<div id="id_wrapper">
+    		<div id="id_header">
+    		    <!--top menu-->
+        		<nav class="navbar navbar-inverse topmenu">
+		            <div class="container">
+		                <!--navbar-header-->
+		                <div class="navbar-header">
+		                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+		                        <span class="sr-only">Toggle navigation</span>
+		                        <span class="icon-bar"></span>
+		                        <span class="icon-bar"></span>
+		                        <span class="icon-bar"></span>
+		                    </button>
+		                    <a class="navbar-brand" href="home">大台北捷運景點</a>
+		                </div>
+
+                        <!--navbar content -->
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="{% url 'home' %}">首頁</a></li>
+                                <li><a href="{% url 'about' %}">關於我們</a></li>
+                                <!--dropdown menu-->
+                                {% for d_line in lines %}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ d_line.line_name }}<span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        {% for d_stop in d_line.mrtstops_set.all %}
+                                        <li><a href="{% url 'MRT' stopName=d_stop.stop_name %}">{{ d_stop.stop_name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+		            </div>
+		        </nav>
+    		</div> <!-- /id_header -->
+    		<div id="id_content">
+    			<div class="container">
+  					<div class="jumbotron">
+    					<h2>網頁製作第15組</h2>
+		    			<h3>　指導老師：吳柏翰</h3>
+		  			</div>
+		  			<div class="row">
+		    			<div class="col-sm-4">
+		    				<h2>蔡瑜泓</h2>
+		    				<h3>
+		    					<p>．資料蒐集</p>
+		    					<p>．後端製作</p>
+		    				</h3>
+		    			</div>
+		    			<div class="col-sm-4">
+		    			  	<h2>王郁卉</h2>
+		    			    <h3>
+		    					<p>．時程管理</p>
+		    					<p>．前後端支援</p>
+		    					<p>．簡報製作</p>
+		    				</h3>
+		    			</div>
+		    			<div class="col-sm-4">
+		    				<h2>陳穎婷</h2>
+		    				<h3>
+		    					<p>．網頁設計</p>
+		    					<p>．前端製作</p>
+		    				</h3>
+		    			</div>
+		  			</div>
+				</div>
+    		</div> <!-- /id_content -->
+            <footer id="id_footer" >
+                <div class="contentner text-center" >
+                    <p style="color:white">Hello，天龍國。建議解析度：1240x1080</p>
+                    <p style="color:white">Designed By NTUST(<a href="about" style="color:blue">105-team15</a>)</p>
+                    <p style="color:white">資料來源: Google，此網站僅供學術使用</p>
+                </div>
+            </footer> <!-- /id_footer -->
+  		</div> <!-- /id_wrapper -->
+    </body>
+ </html>
