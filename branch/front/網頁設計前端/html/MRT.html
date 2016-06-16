@@ -1,0 +1,282 @@
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
+        <title>Hello，天龍國</title>
+
+     	<meta charset="utf-8">
+     	<meta name="description" content="">
+     	<meta name="author" content="">
+
+        <!-- css ref.-->
+        <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../dist/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="../dist/css/mrt.css" rel="stylesheet">
+        <link href="../dist/css/wrapper.css" rel="stylesheet">
+
+        <!-- js ref.-->
+        <script src="../dist/js/jquery.min.js"></script>
+        <script src="../dist/js/bootstrap.min.js"></script>
+        <!-- tab script-->
+        <script type="text/javascript">
+            $('#myTabs a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+            })
+        </script>
+
+    </head>
+
+    <body role="content" >
+        <div id="id_wrapper">
+            <div id="id_header">
+                <!--top menu-->
+                <nav class="navbar navbar-inverse topmenu">
+                    <div class="container">
+                        <!--navbar-header-->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="home.html">大台北捷運景點</a>
+                        </div>
+
+                        <!--navbar content -->
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="home.html">首頁</a></li>
+                                <li><a href="about.html">關於我們</a></li>
+                                <!--dropdown menu-->
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        文湖線<span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="disabled"><a href="#">動物園</a></li>
+                                        <li class="disabled"><a href="#">木柵</a></li>
+                                        <li class="disabled"><a href="#">萬芳社區</a></li>
+                                        <li class="disabled"><a href="#">萬芳醫院</a></li>
+                                        <li class="disabled"><a href="#">辛亥</a></li>
+                                        <li class="disabled"><a href="#">麟光</a></li>
+                                        <li class="disabled"><a href="#">六張犁</a></li>
+                                        <li class="disabled"><a href="#">科技大樓</a></li>
+                                        <li class="disabled"><a href="#">大安</a></li>
+                                        <li class="disabled"><a href="#">忠孝復興</a></li>
+                                        <li class="disabled"><a href="#">南京復興</a></li>
+                                        <li class="disabled"><a href="#">中山國中</a></li>
+                                        <li class="disabled"><a href="#">松山機場</a></li>
+                                        <li class="disabled"><a href="#">大直</a></li>
+                                        <li class="disabled"><a href="#">劍南路</a></li>
+                                        <li class="disabled"><a href="#">西湖</a></li>
+                                        <li class="disabled"><a href="#">港墘</a></li>
+                                        <li class="disabled"><a href="#">文德</a></li>
+                                        <li class="disabled"><a href="#">內湖</a></li>
+                                        <li class="disabled"><a href="#">大湖公園</a></li>
+                                        <li class="disabled"><a href="#">葫洲</a></li>
+                                        <li class="disabled"><a href="#">東湖</a></li>
+                                        <li class="disabled"><a href="#">南港軟體園區</a></li>
+                                        <li class="disabled"><a href="#">南港展覽館</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        淡水信義線<span class="caret"></span>
+                                    </a>
+
+                                     <ul class="dropdown-menu" role="menu">
+                                        <li class="disabled"><a href="#">淡水</a></li>
+                                        <li class="disabled"><a href="#">紅樹林</a></li>
+                                        <li class="disabled"><a href="#">竹圍</a></li>
+                                        <li class="disabled"><a href="#">關渡</a></li>
+                                        <li class="disabled"><a href="#">忠義</a></li>
+                                        <li class="disabled"><a href="#">復興崗</a></li>
+                                        <li class="disabled"><a href="#">新北投</a></li>
+                                        <li class="disabled"><a href="#">北投</a></li>
+                                        <li class="disabled"><a href="#">奇岩</a></li>
+                                        <li class="disabled"><a href="#">唭哩岸</a></li>
+                                        <li class="disabled"><a href="#">石牌</a></li>
+                                        <li class="disabled"><a href="#">明德</a></li>
+                                        <li class="disabled"><a href="#">芝山</a></li>
+                                        <li class="disabled"><a href="#">士林</a></li>
+                                        <li class="disabled"><a href="#">劍潭</a></li>
+                                        <li class="disabled"><a href="#">圓山</a></li>
+                                        <li class="disabled"><a href="#">民權西路</a></li>
+                                        <li class="disabled"><a href="#">雙連</a></li>
+                                        <li class="disabled"><a href="#">中山</a></li>
+                                        <li class="disabled"><a href="#">台北車站</a></li>
+                                        <li class="disabled"><a href="#">台大醫院</a></li>
+                                        <li class="disabled"><a href="#">中正紀念堂</a></li>
+                                        <li class="disabled"><a href="#">東門</a></li>
+                                        <li class="disabled"><a href="#">大安森林公園</a></li>
+                                        <li class="disabled"><a href="#">大安</a></li>
+                                        <li class="disabled"><a href="#">信義安和</a></li>
+                                        <li class="disabled"><a href="#">台北101/世貿</a></li>
+                                        <li class="disabled"><a href="#">象山</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        松山新店線<span class="caret"></span>
+                                      </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="disabled"><a href="#">松山</a></li>
+                                        <li class="disabled"><a href="#">南京三民</a></li>
+                                        <li class="disabled"><a href="#">台北小巨蛋</a></li>
+                                        <li class="disabled"><a href="#">南京復興</a></li>
+                                        <li class="disabled"><a href="#">松江南京</a></li>
+                                        <li class="disabled"><a href="#">中山</a></li>
+                                        <li class="disabled"><a href="#">北門</a></li>
+                                        <li class="disabled"><a href="#">西門</a></li>
+                                        <li class="disabled"><a href="#">小南門</a></li>
+                                        <li class="disabled"><a href="#">中正紀念堂</a></li>
+                                        <li class="disabled"><a href="#">古亭</a></li>
+                                        <li class="disabled"><a href="#">台電大樓</a></li>
+                                        <li><a href="MRT.html">公館</a></li>
+                                        <li class="disabled"><a href="#">萬隆</a></li>
+                                        <li class="disabled"><a href="#">景美</a></li>
+                                        <li class="disabled"><a href="#">大坪林</a></li>
+                                        <li class="disabled"><a href="#">七張</a></li>
+                                        <li class="disabled"><a href="#">小碧潭</a></li>
+                                        <li class="disabled"><a href="#">新店區公所</a></li>
+                                        <li class="disabled"><a href="#">新店</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        中和新蘆線<span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="disabled"><a href="#">南勢角</a></li>
+                                        <li class="disabled"><a href="#">景安</a></li>
+                                        <li class="disabled"><a href="#">永安市場</a></li>
+                                        <li class="disabled"><a href="#">頂溪</a></li>
+                                        <li class="disabled"><a href="#">古亭</a></li>
+                                        <li class="disabled"><a href="#">東門</a></li>
+                                        <li class="disabled"><a href="#">忠孝新生</a></li>
+                                        <li class="disabled"><a href="#">松江南京</a></li>
+                                        <li class="disabled"><a href="#">行天宮</a></li>
+                                        <li class="disabled"><a href="#">中山國小</a></li>
+                                        <li class="disabled"><a href="#">民權西路</a></li>
+                                        <li class="disabled"><a href="#">大橋頭</a></li>
+                                        <li class="disabled"><a href="#">台北橋</a></li>
+                                        <li class="disabled"><a href="#">菜寮</a></li>
+                                        <li class="disabled"><a href="#">三重</a></li>
+                                        <li class="disabled"><a href="#">先嗇宮</a></li>
+                                        <li class="disabled"><a href="#">頭前庄</a></li>
+                                        <li class="disabled"><a href="#">新莊</a></li>
+                                        <li class="disabled"><a href="#">輔大</a></li>
+                                        <li class="disabled"><a href="#">丹鳳</a></li>
+                                        <li class="disabled"><a href="#">迴龍</a></li>
+                                        <li class="disabled"><a href="#">三重國小</a></li>
+                                        <li class="disabled"><a href="#">三和國中</a></li>
+                                        <li class="disabled"><a href="#">徐匯中學</a></li>
+                                        <li class="disabled"><a href="#">三民高中</a></li>
+                                        <li class="disabled"><a href="#">蘆洲</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        板南線<span class="caret"></span>
+                                    </a>
+
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="disabled"><a href="#">頂埔</a></li>
+                                        <li class="disabled"><a href="#">永寧</a></li>
+                                        <li class="disabled"><a href="#">土城</a></li>
+                                        <li class="disabled"><a href="#">海山</a></li>
+                                        <li class="disabled"><a href="#">亞東醫院</a></li>
+                                        <li class="disabled"><a href="#">府中</a></li>
+                                        <li class="disabled"><a href="#">板橋</a></li>
+                                        <li class="disabled"><a href="#">新埔</a></li>
+                                        <li class="disabled"><a href="#">江子翠</a></li>
+                                        <li class="disabled"><a href="#">龍山寺</a></li>
+                                        <li class="disabled"><a href="#">西門</a></li>
+                                        <li class="disabled"><a href="#">台北車站</a></li>
+                                        <li class="disabled"><a href="#">善導寺</a></li>
+                                        <li class="disabled"><a href="#">忠孝新生</a></li>
+                                        <li class="disabled"><a href="#">忠孝復興</a></li>
+                                        <li class="disabled"><a href="#">忠孝敦化</a></li>
+                                        <li class="disabled"><a href="#">國父紀念館</a></li>
+                                        <li class="disabled"><a href="#">市政府</a></li>
+                                        <li class="disabled"><a href="#">永春</a></li>
+                                        <li class="disabled"><a href="#">後山埤</a></li>
+                                        <li class="disabled"><a href="#">昆陽</a></li>
+                                        <li class="disabled"><a href="#">南港</a></li>
+                                        <li class="disabled"><a href="#">南港展覽館</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div> <!-- /id_header -->
+
+            <div id="id_content" style="padding:40px">
+                <!-- content -->
+                <div class="center">
+    　              <div class="border_content">
+                        <!--station name-->
+                        <h2 class="mrt_station">捷運公館站</h2>
+
+                        <!-- tabs -->
+                        <div class="tab">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#view" aria-controls="view" role="tab" data-toggle="tab">景點</a></li>
+                                <li role="presentation"><a href="#food" aria-controls="food" role="tab" data-toggle="tab">美食</a></li>
+                                <li role="presentation"><a href="#culture" aria-controls="culture" role="tab" data-toggle="tab">在地文化</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content tabpanel">
+                                <div role="tabpanel" class="tab-pane fade in active" id="view">
+                                    <table>
+                                        <tr><td>
+                                            <h3>臺灣科技大學</h3>
+                                            <blockquote>
+                                                全臺第一技職龍頭！<br>
+                                                也是本站設計團隊現正就讀的大學。<br>
+                                            </blockquote>
+                                        </td></tr>
+                                        <tr><td>
+                                            <div class="img">
+                                                <a target="_blank" href="../imgs/0.jpg">
+                                                    <img src="../imgs/0.jpg" alt="Trolltunga Norway" width="300" height="200">
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a target="_blank" href="../imgs/1.jpg">
+                                                    <img src="../imgs/1.jpg" alt="Trolltunga Norway" width="300" height="200">
+                                                </a>
+                                            </div>
+                                        </td></tr>
+                                    </table>
+                                    <hr>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="food">美食</div>
+                                <div role="tabpanel" class="tab-pane fade" id="culture">在地文化</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /id_content -->
+
+            <footer id="id_footer" >
+                <div class="contentner text-center" >
+                    <p style="color:white">Hello，天龍國。建議解析度：1240x1080</p>
+                    <p style="color:white">Designed By NTUST(<a href="about.html" style="color:blue">105-team15</a>)</p>
+                    <p style="color:white">資料來源: Google，此網站僅供學術使用</p>
+                </div>
+            </footer> <!-- /id_footer -->
+        </div> <!-- /id_wrapper -->
+    </body>
+</html>
